@@ -56,22 +56,22 @@ public final class R {
         public static final int list_selector=0x7f02000b;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f0a0008;
+        public static final int RelativeLayout1=0x7f0a0009;
         public static final int Space1=0x7f0a000f;
         public static final int action_settings=0x7f0a0013;
         public static final int back=0x7f0a0010;
-        public static final int button1=0x7f0a0007;
+        public static final int button1=0x7f0a0008;
         public static final int counter=0x7f0a0005;
         public static final int drawer_layout=0x7f0a0000;
-        public static final int editText1=0x7f0a0009;
-        public static final int editText2=0x7f0a000a;
-        public static final int editText3=0x7f0a000b;
+        public static final int editText1=0x7f0a000a;
+        public static final int editText2=0x7f0a000b;
+        public static final int editText3=0x7f0a000c;
         public static final int editText4=0x7f0a000d;
         public static final int frame_container=0x7f0a0001;
         public static final int gallery1=0x7f0a0011;
         public static final int icon=0x7f0a0003;
         public static final int imageButton1=0x7f0a0012;
-        public static final int imageView1=0x7f0a000c;
+        public static final int imageView1=0x7f0a0007;
         public static final int list_slidermenu=0x7f0a0002;
         public static final int spinner1=0x7f0a000e;
         public static final int title=0x7f0a0004;
