@@ -10,17 +10,11 @@
         android:layout_height="149dp"
         android:layout_gravity="center_horizontal" />
 
-    <EditText
-        android:id="@+id/editText1"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
-        android:layout_height="213dp"
-        android:layout_gravity="center_horizontal"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="textMultiLine" >
-
-        <requestFocus />
-    </EditText>
+        android:layout_height="214dp"
+        android:text="@string/pet_info" />
 
     <ImageButton
         android:id="@+id/imageButton1"

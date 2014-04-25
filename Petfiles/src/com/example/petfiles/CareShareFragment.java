@@ -7,15 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class CommunityFragment extends Fragment {
+public class CareShareFragment extends Fragment {
 	
-	public CommunityFragment(){}
+	public CareShareFragment(){}
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
  
-        View rootView = inflater.inflate(R.layout.fragment_community, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_careshare, container, false);
         
         return rootView;
     }

@@ -6,6 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
+    <string name="pet_info">Information on pet</string>
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">

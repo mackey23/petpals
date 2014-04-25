@@ -6,15 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class PhotosFragment extends Fragment {
+public class JournalFragment extends Fragment {
 	
-	public PhotosFragment(){}
+	public JournalFragment(){}
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
  
-        View rootView = inflater.inflate(R.layout.fragment_photos, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_journal, container, false);
          
         return rootView;
     }

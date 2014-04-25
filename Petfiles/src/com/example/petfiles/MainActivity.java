@@ -176,16 +176,16 @@ public class MainActivity extends Activity {
 			fragment = new MyPetsFragment();
 			break;
 		case 1:
-			fragment = new FindPeopleFragment();
+			fragment = new JournalFragment();
 			break;
 		case 2:
-			fragment = new PhotosFragment();
+			fragment = new ToDoFragment();
 			break;
 		case 3:
-			fragment = new CommunityFragment();
+			fragment = new CareShareFragment();
 			break;
 		case 4:
-			fragment = new PagesFragment();
+			fragment = new SettingFragment();
 			break;
 		case 5:
 			fragment = new WhatsHotFragment();
