@@ -33,15 +33,9 @@
     <string name="desc_list_item_icon">Item Icon</string>
     
     <!-- Test Spinner Info -->
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
     </string-array>
     
     

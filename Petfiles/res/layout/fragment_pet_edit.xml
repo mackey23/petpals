@@ -7,7 +7,7 @@
     android:orientation="horizontal" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/editName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -19,31 +19,31 @@
     </EditText>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editSpecies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/editName"
+        android:layout_below="@+id/editName"
         android:layout_column="0"
         android:layout_gravity="fill_horizontal"
         android:ems="10" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editBreed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignLeft="@+id/editName"
         android:layout_below="@+id/imageView1"
         android:layout_column="0"
         android:layout_gravity="fill_horizontal"
         android:ems="10" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText3"
+        android:layout_alignLeft="@+id/editName"
+        android:layout_below="@+id/editBreed"
         android:layout_column="0"
         android:layout_gravity="fill_horizontal"
         android:ems="10" />
@@ -52,9 +52,9 @@
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_alignRight="@+id/editText4"
-        android:layout_below="@+id/editText4"
+        android:layout_alignLeft="@+id/editName"
+        android:layout_alignRight="@+id/editBirthday"
+        android:layout_below="@+id/editBirthday"
         android:layout_column="0"
         android:layout_gravity="fill_horizontal" />
 
@@ -70,10 +70,20 @@
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignBottom="@+id/editSpecies"
         android:layout_alignParentRight="true"
         android:layout_marginRight="24dp"
         android:src="@drawable/ic_photos" />
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/back"
+        android:layout_alignBottom="@+id/back"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_marginRight="32dp"
+        android:text="Confirm" />
 
     <Button
         android:id="@+id/back"
@@ -81,8 +91,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="59dp"
-        android:layout_marginLeft="29dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="53dp"
         android:text="Cancel" />
 
 </RelativeLayout>
