@@ -27,7 +27,7 @@ public class PetViewFragment extends Fragment{
 		Activity now = getActivity();
 		DatabaseHandler db = new DatabaseHandler(now);
 		// NEED TO UPDATE NUMBER ACCORDING TO WHICH PET IS CLICKED
-		Pet pet = db.getPet(18);
+		Pet pet = db.getPet(1);
 		String info = " Name: " + pet.getName() + "\n Species:" + pet.getSpecies() 
 				+ "\n Breed: " + pet.getBreed() + "\n Birthday" + pet.getBirthday()
 				+ "\n Gender:" + pet.getGender();

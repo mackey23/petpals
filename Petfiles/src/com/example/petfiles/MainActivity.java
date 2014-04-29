@@ -236,20 +236,6 @@ public class MainActivity extends Activity {
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 	
-	//Changes View to the Pet view
-	public void changePetView(View view){
-    	Fragment newFragment = new PetViewFragment();
-    	FragmentTransaction transaction = getFragmentManager().beginTransaction();
-
-    	// Replace whatever is in the fragment_container view with this fragment,
-    	// and add the transaction to the back stack
-    	transaction.replace(R.id.frame_container, newFragment);
-    	transaction.addToBackStack(null);
-
-    	// Commit the transaction
-    	transaction.commit();
-	}
-	
 	//Changes View to the Pet Edit 
 	public void petEdit(View view){
     	Fragment newFragment = new PetEditFragment();

@@ -30,7 +30,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:onClick="changePetView"
         android:text="Taco's Profile" />
 
 </RelativeLayout>
