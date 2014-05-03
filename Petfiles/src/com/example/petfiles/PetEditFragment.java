@@ -5,9 +5,10 @@ import java.util.List;
 import com.example.petfiles.DatabaseHandler;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,12 @@ public class PetEditFragment extends Fragment {
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+		
+		FragmentManager manager = getFragmentManager();
+		
+        String str1 = "";
+        str1 += manager.getBackStackEntryCount();
+        Log.d("3", str1);
 		
 		getActivity().setTitle("Edit Pet Profile");
         View rootView = inflater.inflate(R.layout.fragment_pet_edit, container, false);
@@ -101,6 +108,7 @@ public class PetEditFragment extends Fragment {
 			    	// Replace whatever is in the fragment_container view with this fragment,
 			    	// and add the transaction to the back stack
 			    	transaction.replace(R.id.frame_container, newFragment);
+			    	transaction.addToBackStack(null);
 
 			    	// Commit the transaction
 			    	transaction.commit();

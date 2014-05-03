@@ -1,20 +1,22 @@
 package com.example.petfiles;
 
+import com.example.petfiles.MyPetsFragment.OnHeadlineSelectedListener;
 import com.example.petfiles.adapter.NavDrawerListAdapter;
 import com.example.petfiles.model.NavDrawerItem;
 
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
@@ -25,7 +27,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity 
+	implements OnHeadlineSelectedListener{
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -118,6 +121,24 @@ public class MainActivity extends Activity {
 			// on first time display view for first nav item
 			displayView(0);
 		}
+		
+        if (findViewById(R.id.frame_container) != null) {
+
+            // However, if we're being restored from a previous state,
+            // then we don't need to do anything and should return or else
+            // we could end up with overlapping fragments.
+            if (savedInstanceState != null) {
+                return;
+            }
+            
+            MyPetsFragment firstFragment = new MyPetsFragment();
+            
+            firstFragment.setArguments(getIntent().getExtras());
+            
+			FragmentManager fragmentManager = getSupportFragmentManager();
+			fragmentManager.beginTransaction()
+					.replace(R.id.frame_container, firstFragment).commit();
+        }
 	}
 
 	/**
@@ -196,9 +217,10 @@ public class MainActivity extends Activity {
 		}
 
 		if (fragment != null) {
-			FragmentManager fragmentManager = getFragmentManager();
+			FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager.beginTransaction()
 					.replace(R.id.frame_container, fragment).commit();
+			
 
 			// update selected item and title, then close the drawer
 			mDrawerList.setItemChecked(position, true);
@@ -236,10 +258,30 @@ public class MainActivity extends Activity {
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 	
+	public void onArticleSelected(int position){
+		FragmentManager manager = getSupportFragmentManager();
+	    String str1 = "";
+        str1 += manager.getBackStackEntryCount();
+        Log.d("1", str1);
+     	PetViewFragment newFragment = new PetViewFragment();
+     	Bundle args = new Bundle();
+        args.putInt(PetViewFragment.ARG_POSITION, position);
+        newFragment.setArguments(args);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        // Replace whatever is in the fragment_container view with this fragment,
+        // and add the transaction to the back stack so the user can navigate back
+        transaction.replace(R.id.frame_container, newFragment);
+        transaction.addToBackStack(null);
+
+        // Commit the transaction
+        transaction.commit();
+	}
+	
 	//Changes View to the Pet Edit 
 	public void petEdit(View view){
-    	Fragment newFragment = new PetEditFragment();
-    	FragmentTransaction transaction = getFragmentManager().beginTransaction();
+    	PetEditFragment newFragment = new PetEditFragment();
+    	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
     	// Replace whatever is in the fragment_container view with this fragment,
     	// and add the transaction to the back stack
