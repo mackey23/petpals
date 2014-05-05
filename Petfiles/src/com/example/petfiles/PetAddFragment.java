@@ -19,44 +19,22 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class PetEditFragment extends Fragment {
+public class PetAddFragment extends Fragment {
 	
-	public PetEditFragment(){}
+	public PetAddFragment(){}
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 		
-		FragmentManager manager = getFragmentManager();
-		
-        String str1 = "";
-        str1 += manager.getBackStackEntryCount();
-        Log.d("3", str1);
-		
 		getActivity().setTitle("Edit Pet Profile");
-        View rootView = inflater.inflate(R.layout.fragment_pet_edit, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_pet_add, container, false);
         setSpinnerContent(rootView);
-        setButton(rootView);
         submit(rootView);
          
         return rootView;
     }
-	
-//	@Override
-//	public void onViewCreated(View view, Bundle savedInstanceState) {
-//	    super.onViewCreated(view, savedInstanceState);
-//	    
-//	}
-	
-	private void setButton(View view){
-		 Button back = (Button) view.findViewById(R.id.back);
-         back.setOnClickListener(new View.OnClickListener() {
-             public void onClick(View v) {
-            	 getActivity().onBackPressed(); 
-             }
-         });
-	}
-	
+		
 	private void setSpinnerContent(View view){
 		Spinner spinner = (Spinner) view.findViewById(R.id.spinner1);
 		// Create an ArrayAdapter using the string array and a default spinner layout
@@ -102,7 +80,7 @@ public class PetEditFragment extends Fragment {
 //			            Log.d("Name: ", log);
 //			        }
 			        
-			    	Fragment newFragment = new PetViewFragment();
+			    	Fragment newFragment = new MyPetsFragment();
 			    	FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
 			    	// Replace whatever is in the fragment_container view with this fragment,

@@ -55,13 +55,22 @@ public class MyPetsFragment extends Fragment {
 
 	    	// Commit the transaction
 	    	transaction.commit();
-		} else {
-			petItems = new ArrayList<PetItem>();
-			
-	        List<Pet> pets = db.getAllPets(); 
-	 
+		}
+         
+        return rootView;
+    }
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		petItems = new ArrayList<PetItem>();
+		
+		DatabaseHandler db = new DatabaseHandler(getActivity());
+		
+        List<Pet> pets = db.getAllPets(); 
+        
+   	 	if (names.size() == 0) {
 	        for (Pet p : pets) {
-//                // Writing Contacts to log
 	        	String name = p.getName();
 	        	String breed = p.getBreed();
 	        	String birthday = p.getBirthday();
@@ -69,24 +78,21 @@ public class MyPetsFragment extends Fragment {
 	        	breeds.add(breed);
 	        	birthdays.add(birthday);
 	        }
-	        
-	        	        
+   	 	}
+        
+        if (petItems.size() == 0){	        
 	        for(int i=0; i<names.size(); i++){
 	        	PetItem item = new PetItem(names.get(i), 0, breeds.get(i), birthdays.get(i));
 	        	petItems.add(item);
 	        }
 	        
-	        mylistview = (ListView) rootView.findViewById(R.id.list);
+	        mylistview = (ListView) getView().findViewById(R.id.list);
 	        PetListAdapter adapter = new PetListAdapter(getActivity(), petItems);
 	        mylistview.setAdapter(adapter);
 	        mylistview.setOnItemClickListener(new petListClickListener());
-		}
- 
-       
-//        changePetView(rootView);
-         
-        return rootView;
-    }
+        }
+		
+	}
 	
 	private class petListClickListener implements ListView.OnItemClickListener{
 		
@@ -108,22 +114,4 @@ public class MyPetsFragment extends Fragment {
         }
     }
 	
-	//Changes View to the Pet view
-//	private void changePetView(View view){
-//		 Button change = (Button) view.findViewById(R.id.button1);
-//         change.setOnClickListener(new View.OnClickListener() {
-//             public void onClick(View v) {
-//             	Fragment newFragment = new PetViewFragment();
-//            	FragmentTransaction transaction = getFragmentManager().beginTransaction();
-//
-//            	// Replace whatever is in the fragment_container view with this fragment,
-//            	// and add the transaction to the back stack
-//            	transaction.replace(R.id.frame_container, newFragment);
-//            	transaction.addToBackStack(null);
-//
-//            	// Commit the transaction
-//            	transaction.commit();
-//             }
-//         });
-//	}
 }

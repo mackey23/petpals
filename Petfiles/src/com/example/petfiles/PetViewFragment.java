@@ -21,11 +21,6 @@ public class PetViewFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 		
-		FragmentManager manager = getFragmentManager();
-		
-        String str1 = "";
-        str1 += manager.getBackStackEntryCount();
-        Log.d("2", str1);
 		
         if (savedInstanceState != null) {
             currentPosition = savedInstanceState.getInt(ARG_POSITION);
@@ -45,10 +40,7 @@ public class PetViewFragment extends Fragment{
 		String info = " Name: " + pet.getName() + "\n Species:" + pet.getSpecies() 
 				+ "\n Breed: " + pet.getBreed() + "\n Birthday" + pet.getBirthday()
 				+ "\n Gender:" + pet.getGender();
-		Log.d("Reading: ", "Reading all contacts..");
 		((TextView) now.findViewById(R.id.textView1)).setText(info);
-//		TextView article = (TextView) getActivity().findViewById(R.id.textView1);
-//	    article.setText(info);
     }
     
     @Override
@@ -62,7 +54,7 @@ public class PetViewFragment extends Fragment{
         Bundle args = getArguments();
         if (args != null) {
             // Set article based on argument passed in
-        	updatePetView(args.getInt(ARG_POSITION)+1);
+        	updatePetView(args.getInt(ARG_POSITION));
         } else if (currentPosition != -1) {
             // Set article based on saved instance state defined during onCreateView
         	updatePetView(currentPosition);

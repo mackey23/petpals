@@ -24,6 +24,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -32,6 +34,8 @@ public class MainActivity extends FragmentActivity
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
+	
+	private int petNum;
 
 	// nav drawer title
 	private CharSequence mDrawerTitle;
@@ -259,13 +263,10 @@ public class MainActivity extends FragmentActivity
 	}
 	
 	public void onArticleSelected(int position){
-		FragmentManager manager = getSupportFragmentManager();
-	    String str1 = "";
-        str1 += manager.getBackStackEntryCount();
-        Log.d("1", str1);
+		petNum = position+1;
      	PetViewFragment newFragment = new PetViewFragment();
      	Bundle args = new Bundle();
-        args.putInt(PetViewFragment.ARG_POSITION, position);
+        args.putInt(PetViewFragment.ARG_POSITION, petNum);
         newFragment.setArguments(args);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -280,7 +281,54 @@ public class MainActivity extends FragmentActivity
 	
 	//Changes View to the Pet Edit 
 	public void petEdit(View view){
-    	PetEditFragment newFragment = new PetEditFragment();
+    	EditPetFragment newFragment = new EditPetFragment();
+     	Bundle args = new Bundle();
+        args.putInt(EditPetFragment.ARG_POSITION, petNum);
+        newFragment.setArguments(args);
+    	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+    	// Replace whatever is in the fragment_container view with this fragment,
+    	// and add the transaction to the back stack
+    	transaction.replace(R.id.frame_container, newFragment);
+    	transaction.addToBackStack(null);
+
+    	// Commit the transaction
+    	transaction.commit();
+	}
+	
+	public void back(View view){
+		onBackPressed(); 
+	}
+	
+	public void updatePet(View view){
+		EditText editName = (EditText) findViewById(R.id.editName2);
+		String name = editName.getText().toString();
+		EditText editSpecies = (EditText) findViewById(R.id.editSpecies2);
+		String species = editSpecies.getText().toString();
+		EditText editBreed = (EditText) findViewById(R.id.editBreed2);
+		String breed = editBreed.getText().toString();
+		EditText editBirth = (EditText) findViewById(R.id.editBirthday2);
+		String birthday = editBirth.getText().toString();
+		Spinner spinner = (Spinner) findViewById(R.id.spinner2);
+		String gender = spinner.getSelectedItem().toString();
+		DatabaseHandler db = new DatabaseHandler(this);
+		Pet pet = new Pet(petNum, name, birthday, species, breed, gender);
+		db.updatePet(pet);
+		
+    	MyPetsFragment newFragment = new MyPetsFragment();
+    	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+    	// Replace whatever is in the fragment_container view with this fragment,
+    	// and add the transaction to the back stack
+    	transaction.replace(R.id.frame_container, newFragment);
+    	transaction.addToBackStack(null);
+
+    	// Commit the transaction
+    	transaction.commit();
+	}
+	
+	public void addPet(View view){
+       	Fragment newFragment = new PetAddFragment();
     	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
     	// Replace whatever is in the fragment_container view with this fragment,

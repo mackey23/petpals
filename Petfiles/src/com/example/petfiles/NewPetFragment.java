@@ -18,27 +18,9 @@ public class NewPetFragment extends Fragment{
             Bundle savedInstanceState) {
  
         View rootView = inflater.inflate(R.layout.fragment_new_pet, container, false);
-        addbutton(rootView);
          
         return rootView;
     }
 	
-	private void addbutton(View view){
-		 ImageButton add = (ImageButton) view.findViewById(R.id.imageButton1);
-         add.setOnClickListener(new View.OnClickListener() {
-             public void onClick(View v) {
-             	Fragment newFragment = new PetEditFragment();
-            	FragmentTransaction transaction = getFragmentManager().beginTransaction();
-
-            	// Replace whatever is in the fragment_container view with this fragment,
-            	// and add the transaction to the back stack
-            	transaction.replace(R.id.frame_container, newFragment);
-            	transaction.addToBackStack(null);
-
-            	// Commit the transaction
-            	transaction.commit();
-             }
-         });
-	}
 
 }
