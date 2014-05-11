@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,8 +65,12 @@ public class PetListAdapter extends BaseAdapter{
 			     .findViewById(R.id.birthday);
 			
 			   PetItem row_pos = petItems.get(position);
-			
-			   holder.profile_pic.setImageResource(row_pos.getProfile_pic_id());
+			   
+			   if (row_pos.getImage() == null) {
+				   holder.profile_pic.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher));
+			   } else {
+				   holder.profile_pic.setImageBitmap(BitmapFactory.decodeFile(row_pos.getImage()));
+			   }
 			   holder.name.setText(row_pos.getName());
 			   holder.breed.setText(row_pos.getBreed());
 			   holder.birthday.setText(row_pos.getBirthday());

@@ -1,6 +1,7 @@
 package com.example.petfiles;
 
 import android.app.Activity;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class PetViewFragment extends Fragment{
@@ -37,10 +39,16 @@ public class PetViewFragment extends Fragment{
 		DatabaseHandler db = new DatabaseHandler(now);
 		// NEED TO UPDATE NUMBER ACCORDING TO WHICH PET IS CLICKED
 		Pet pet = db.getPet(position);
-		String info = " Name: " + pet.getName() + "\n Species:" + pet.getSpecies() 
-				+ "\n Breed: " + pet.getBreed() + "\n Birthday" + pet.getBirthday()
-				+ "\n Gender:" + pet.getGender();
+		String info = " Name: " + pet.getName() + "\n Species: " + pet.getSpecies() 
+				+ "\n Breed: " + pet.getBreed() + "\n Birthday: " + pet.getBirthday()
+				+ "\n Gender: " + pet.getGender() +  "\n Notes: " + pet.getNotes();
 		((TextView) now.findViewById(R.id.textView1)).setText(info);
+		ImageView image = (ImageView) now.findViewById(R.id.pic);
+		if (pet.getImage() == null) {
+			image.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+		} else {
+			image.setImageBitmap(BitmapFactory.decodeFile(pet.getImage()));
+		}
     }
     
     @Override

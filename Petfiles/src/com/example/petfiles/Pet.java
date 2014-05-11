@@ -9,28 +9,34 @@ public class Pet {
 	String _species;
 	String _breed;
 	String _gender;
+	String _image;
+	String _notes;
 	
 	// Empty constructor
 	public Pet(){
 		
 	}
 	// constructor
-	public Pet(int id, String name, String _birthday, String _species, String _breed, String _gender){
+	public Pet(int id, String name, String _birthday, String _species, String _breed, String _gender, String _image, String _notes){
 		this._id = id;
 		this._name = name;
 		this._birthday = _birthday;
 		this._species = _species;
 		this._breed = _breed;
 		this._gender = _gender;
+		this._image = _image;
+		this._notes = _notes;
 	}
 	
 	// constructor
-	public Pet(String name, String _birthday, String _species, String _breed, String _gender){
+	public Pet(String name, String _birthday, String _species, String _breed, String _gender, String _image, String _notes){
 		this._name = name;
 		this._birthday = _birthday;
 		this._species = _species;
 		this._breed = _breed;
 		this._gender = _gender;
+		this._image = _image;
+		this._notes = _notes;
 	}
 	// getting ID
 	public int getID(){
@@ -90,5 +96,25 @@ public class Pet {
 	// setting gender
 	public void setGender(String gender){
 		this._gender = gender;
+	}
+	
+	// getting image
+	public String getImage(){
+		return this._image;
+	}
+	
+	// setting image
+	public void setImage(String image){
+		this._image = image;
+	}
+	
+	// getting notes
+	public String getNotes(){
+		return this._notes;
+	}
+	
+	// setting notes
+	public void setNotes(String notes){
+		this._notes = notes;
 	}
 }

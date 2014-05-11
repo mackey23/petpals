@@ -16,7 +16,8 @@
         android:id="@+id/pet_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/profile_pic"
         android:paddingBottom="10dp"
         android:text="txt"
@@ -26,8 +27,9 @@
         android:id="@+id/breed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/member_name"
-        android:layout_below="@+id/member_name"
+        android:layout_alignLeft="@+id/pet_name"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/birthday"
         android:text="txt"
         android:textSize="16sp" />
 
@@ -35,9 +37,9 @@
         android:id="@+id/birthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/member_name"
-        android:layout_alignBottom="@+id/member_name"
+        android:layout_alignLeft="@+id/pet_name"
         android:layout_alignParentRight="true"
+        android:layout_below="@+id/pet_name"
         android:text="txt"
         android:textSize="16sp" />
 

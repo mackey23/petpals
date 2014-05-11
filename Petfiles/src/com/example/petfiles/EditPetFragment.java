@@ -1,14 +1,22 @@
 package com.example.petfiles;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -17,11 +25,16 @@ public class EditPetFragment  extends Fragment{
 	final static String ARG_POSITION = "position";
 	int currentPosition = -1;
 	
+	private static int RESULT_LOAD_IMAGE = 1;
+	private String selectedImagePath;
+	
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
     	
     	
     	View rootView = inflater.inflate(R.layout.fragment_edit_pet, container, false);
+    	updateImage(rootView);
+    	updatePet(rootView);
     	
     	return rootView;
     	
@@ -39,6 +52,7 @@ public class EditPetFragment  extends Fragment{
 	}
 	
     public void updatePet(int position) {
+    	currentPosition = position;
 		Activity now = getActivity();
 		DatabaseHandler db = new DatabaseHandler(now);
 		// NEED TO UPDATE NUMBER ACCORDING TO WHICH PET IS CLICKED
@@ -54,14 +68,23 @@ public class EditPetFragment  extends Fragment{
 			pos = 1; 
 		}
 		((Spinner) now.findViewById(R.id.spinner2)).setSelection(pos);
+		((EditText) now.findViewById(R.id.editNotes2)).setText(pet.getNotes());
+		ImageButton button = (ImageButton) now.findViewById(R.id.updatePic);
+		if (selectedImagePath != null) {
+			button.setImageBitmap(BitmapFactory.decodeFile(selectedImagePath));
+		} else if (pet.getImage() == null){
+			button.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+		} else {
+			button.setImageBitmap(BitmapFactory.decodeFile(pet.getImage()));
+		}
+		db.close();
     }
     
     @Override
     public void onStart() {
         super.onStart();
-   	 	Log.d("3","blue");
     	setSpinnerContent(getView());
-    	Log.d("4","blue");
+
 
         // During startup, check if there are arguments passed to the fragment.
         // onStart is a good place to do this because the layout has already been
@@ -78,4 +101,79 @@ public class EditPetFragment  extends Fragment{
         }
         
     }
+    
+	private void updateImage(View view){
+		ImageButton button = (ImageButton) view.findViewById(R.id.updatePic);
+		button.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+				startActivityForResult(i, RESULT_LOAD_IMAGE);
+			}
+			
+		});
+	}
+	
+    @Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    	super.onActivityResult(requestCode, resultCode, data);
+    	
+		if (requestCode == RESULT_LOAD_IMAGE && resultCode == getActivity().RESULT_OK && null != data) {
+			Uri selectedImage = data.getData();
+			String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+			Cursor cursor = getActivity().getContentResolver().query(selectedImage,filePathColumn, null, null, null);
+			cursor.moveToFirst();
+
+			int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+			selectedImagePath = cursor.getString(columnIndex);
+			cursor.close();
+			
+			ImageButton button = (ImageButton) getView().findViewById(R.id.updatePic);
+			button.setImageBitmap(BitmapFactory.decodeFile(selectedImagePath));
+		
+		}
+    
+    
+    }
+    
+	public void updatePet(View view){
+		Button button = (Button) view.findViewById(R.id.update);
+		button.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				EditText editName = (EditText) getActivity().findViewById(R.id.editName2);
+				String name = editName.getText().toString();
+				EditText editSpecies = (EditText) getActivity().findViewById(R.id.editSpecies2);
+				String species = editSpecies.getText().toString();
+				EditText editBreed = (EditText) getActivity().findViewById(R.id.editBreed2);
+				String breed = editBreed.getText().toString();
+				EditText editBirth = (EditText) getActivity().findViewById(R.id.editBirthday2);
+				String birthday = editBirth.getText().toString();
+				Spinner spinner = (Spinner) getActivity().findViewById(R.id.spinner2);
+				String gender = spinner.getSelectedItem().toString();
+				EditText editNotes = (EditText) getActivity().findViewById(R.id.editNotes2);
+				String notes = editNotes.getText().toString();
+		
+				DatabaseHandler db = new DatabaseHandler(getActivity());
+				Pet pet = new Pet(currentPosition, name, birthday, species, breed, gender, selectedImagePath, notes);
+				db.updatePet(pet);
+				
+				db.close();
+				
+		    	MyPetsFragment newFragment = new MyPetsFragment();
+		    	FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		
+		    	// Replace whatever is in the fragment_container view with this fragment,
+		    	// and add the transaction to the back stack
+		    	transaction.replace(R.id.frame_container, newFragment);
+		    	transaction.addToBackStack(null);
+		
+		    	// Commit the transaction
+		    	transaction.commit();
+			}
+		});
+	}
 }

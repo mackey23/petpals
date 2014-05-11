@@ -3,14 +3,14 @@ package com.example.petfiles;
 public class PetItem {
 	
 	private String name;
-	private int profile_pic_id;
+	private String image;
 	private String breed;
 	private String birthday;
 	
-	public PetItem(String name, int profile_pic_id, String breed, String birthday){
+	public PetItem(String name, String image, String breed, String birthday){
 		
 		this.name = name;
-		this.profile_pic_id= profile_pic_id;
+		this.image= image;
 		this.breed = breed;
 		this.birthday = birthday;
 		
@@ -24,12 +24,12 @@ public class PetItem {
 		this.name = name;
 	}
 	
-	public int getProfile_pic_id(){
-		return profile_pic_id;
+	public String getImage(){
+		return image;
 	}
 	
-	public void setProfile_pic_id(int profile_pic_id) {
-		this.profile_pic_id = profile_pic_id;
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	public String getBreed(){

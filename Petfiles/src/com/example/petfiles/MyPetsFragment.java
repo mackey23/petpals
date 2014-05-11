@@ -22,7 +22,7 @@ import android.widget.ListView;
 public class MyPetsFragment extends Fragment {
 	
 	private ArrayList<String> names = new ArrayList<String>();;
-	private TypedArray profile_pics;
+	private ArrayList<String> images = new ArrayList<String>();
 	private ArrayList<String> breeds = new ArrayList<String>();
 	private ArrayList<String> birthdays = new ArrayList<String>();
 	
@@ -41,6 +41,8 @@ public class MyPetsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 		DatabaseHandler db = new DatabaseHandler(getActivity());
+		// Clean out table
+//		db.deleteAll();
 		
 		View rootView = inflater.inflate(R.layout.fragment_my_pets, container, false);
 
@@ -74,15 +76,17 @@ public class MyPetsFragment extends Fragment {
 	        	String name = p.getName();
 	        	String breed = p.getBreed();
 	        	String birthday = p.getBirthday();
+	        	String image = p.getImage();
 	        	names.add(name);
 	        	breeds.add(breed);
 	        	birthdays.add(birthday);
+	        	images.add(image);
 	        }
    	 	}
         
         if (petItems.size() == 0){	        
 	        for(int i=0; i<names.size(); i++){
-	        	PetItem item = new PetItem(names.get(i), 0, breeds.get(i), birthdays.get(i));
+	        	PetItem item = new PetItem(names.get(i), images.get(i), breeds.get(i), birthdays.get(i));
 	        	petItems.add(item);
 	        }
 	        

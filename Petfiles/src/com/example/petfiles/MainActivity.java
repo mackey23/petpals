@@ -4,14 +4,21 @@ import com.example.petfiles.MyPetsFragment.OnHeadlineSelectedListener;
 import com.example.petfiles.adapter.NavDrawerListAdapter;
 import com.example.petfiles.model.NavDrawerItem;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -26,6 +33,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -34,7 +43,8 @@ public class MainActivity extends FragmentActivity
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
-	
+
+	//Position of pet in the pet list 
 	private int petNum;
 
 	// nav drawer title
@@ -300,33 +310,6 @@ public class MainActivity extends FragmentActivity
 		onBackPressed(); 
 	}
 	
-	public void updatePet(View view){
-		EditText editName = (EditText) findViewById(R.id.editName2);
-		String name = editName.getText().toString();
-		EditText editSpecies = (EditText) findViewById(R.id.editSpecies2);
-		String species = editSpecies.getText().toString();
-		EditText editBreed = (EditText) findViewById(R.id.editBreed2);
-		String breed = editBreed.getText().toString();
-		EditText editBirth = (EditText) findViewById(R.id.editBirthday2);
-		String birthday = editBirth.getText().toString();
-		Spinner spinner = (Spinner) findViewById(R.id.spinner2);
-		String gender = spinner.getSelectedItem().toString();
-		DatabaseHandler db = new DatabaseHandler(this);
-		Pet pet = new Pet(petNum, name, birthday, species, breed, gender);
-		db.updatePet(pet);
-		
-    	MyPetsFragment newFragment = new MyPetsFragment();
-    	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-    	// Replace whatever is in the fragment_container view with this fragment,
-    	// and add the transaction to the back stack
-    	transaction.replace(R.id.frame_container, newFragment);
-    	transaction.addToBackStack(null);
-
-    	// Commit the transaction
-    	transaction.commit();
-	}
-	
 	public void addPet(View view){
        	Fragment newFragment = new PetAddFragment();
     	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -339,4 +322,5 @@ public class MainActivity extends FragmentActivity
     	// Commit the transaction
     	transaction.commit();
 	}
+   
 }
