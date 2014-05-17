@@ -1,6 +1,8 @@
 package com.example.petfiles.model;
 
-public class Pet {
+import java.io.Serializable;
+
+public class Pet implements Serializable{
 	
 	//private variables
 	int _id;

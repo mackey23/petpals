@@ -85,7 +85,7 @@ public class PetAddFragment extends Fragment {
 				} 
 				if(birthday.length() == 0){
 					editBirth.setError("Birthday is required");
-				} 
+				} // what id if someone doesn't know their pet's birthday?
 				if(name.length() != 0 && breed.length() != 0 && birthday.length() != 0 ){
 					DatabaseHandler db = new DatabaseHandler(now);
 					Pet pet = new Pet(name, birthday, species, breed, gender, image, notes);

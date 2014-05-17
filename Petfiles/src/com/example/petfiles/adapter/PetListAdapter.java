@@ -1,7 +1,11 @@
-package com.example.petfiles;
+package com.example.petfiles.adapter;
 
 import java.util.List;
 
+import com.example.petfiles.R;
+import com.example.petfiles.R.drawable;
+import com.example.petfiles.R.id;
+import com.example.petfiles.R.layout;
 import com.example.petfiles.model.PetItem;
 
 import android.app.Activity;
@@ -19,7 +23,7 @@ public class PetListAdapter extends BaseAdapter{
 	 Context context;
 	 List<PetItem> petItems;
 	
-	 PetListAdapter(Context context, List<PetItem> petItems) {
+	 public PetListAdapter(Context context, List<PetItem> petItems) {
 		  this.context = context;
 		  this.petItems = petItems;
 	 }

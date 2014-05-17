@@ -3,6 +3,7 @@ package com.example.petfiles;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.petfiles.adapter.PetListAdapter;
 import com.example.petfiles.model.Pet;
 import com.example.petfiles.model.PetItem;
 

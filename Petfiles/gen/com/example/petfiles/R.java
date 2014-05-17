@@ -9,6 +9,9 @@ package com.example.petfiles;
 
 public final class R {
     public static final class array {
+        public static final int activity_main_Listview_main_option_Stringarray_values=0x7f070003;
+        public static final int activity_modify_task_Spinner_completion_status_Stringarray_values=0x7f070005;
+        public static final int activity_modify_task_Spinner_priority_level_Stringarray_values=0x7f070004;
         /**  Test Spinner Info 
          */
         public static final int gender_array=0x7f070002;
@@ -19,6 +22,8 @@ public final class R {
         /**  Nav Drawer Menu Items 
          */
         public static final int nav_drawer_items=0x7f070000;
+        public static final int sample_pets=0x7f070006;
+        public static final int sample_tasks=0x7f070007;
     }
     public static final class attr {
     }
@@ -56,64 +61,137 @@ public final class R {
         public static final int list_selector=0x7f02000b;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f0a0014;
-        public static final int Space1=0x7f0a0018;
-        public static final int action_settings=0x7f0a0023;
-        public static final int back=0x7f0a001b;
-        public static final int back2=0x7f0a000b;
-        public static final int birthday=0x7f0a0022;
-        public static final int breed=0x7f0a0021;
-        public static final int child_fragment=0x7f0a0011;
-        public static final int confirm=0x7f0a001c;
-        public static final int counter=0x7f0a0005;
+        public static final int RelativeLayout1=0x7f0a0027;
+        public static final int Space1=0x7f0a002b;
+        public static final int action_settings=0x7f0a0037;
+        public static final int activity_modify_task_Datepicker_due_date=0x7f0a0004;
+        public static final int activity_modify_task_EditText_note=0x7f0a0005;
+        public static final int activity_modify_task_Edittext_task_title=0x7f0a0003;
+        public static final int activity_modify_task_Menu_actionbar_Item_cancel=0x7f0a0039;
+        public static final int activity_modify_task_Menu_actionbar_Item_save=0x7f0a0038;
+        public static final int activity_modify_task_Spinner_completion_status=0x7f0a0008;
+        public static final int activity_modify_task_Spinner_pet=0x7f0a0007;
+        public static final int activity_modify_task_Spinner_priority_level=0x7f0a0006;
+        public static final int activity_view_all_pets_listview_all_pets_layout_textview_pet_title=0x7f0a0009;
+        public static final int activity_view_task_detail_Menu_actionbar_Item_delete=0x7f0a003c;
+        public static final int activity_view_task_detail_Menu_actionbar_Item_edit=0x7f0a003b;
+        public static final int activity_view_task_detail_TextView_due_date_content=0x7f0a000d;
+        public static final int activity_view_task_detail_TextView_due_date_label=0x7f0a000c;
+        public static final int activity_view_task_detail_TextView_note_content=0x7f0a000f;
+        public static final int activity_view_task_detail_TextView_note_label=0x7f0a000e;
+        public static final int activity_view_task_detail_TextView_pet_content=0x7f0a0013;
+        public static final int activity_view_task_detail_TextView_pet_label=0x7f0a0012;
+        public static final int activity_view_task_detail_TextView_prority_level_content=0x7f0a0011;
+        public static final int activity_view_task_detail_TextView_prority_level_label=0x7f0a0010;
+        public static final int activity_view_task_detail_TextView_status_content=0x7f0a0015;
+        public static final int activity_view_task_detail_TextView_status_label=0x7f0a0014;
+        public static final int activity_view_task_detail_TextView_task_title_content=0x7f0a000b;
+        public static final int activity_view_task_detail_TextView_task_title_label=0x7f0a000a;
+        public static final int back=0x7f0a002e;
+        public static final int back2=0x7f0a001e;
+        public static final int birthday=0x7f0a0036;
+        public static final int breed=0x7f0a0035;
+        public static final int child_fragment=0x7f0a0024;
+        public static final int confirm=0x7f0a002f;
+        public static final int counter=0x7f0a0018;
         public static final int drawer_layout=0x7f0a0000;
-        public static final int editBirthday=0x7f0a0017;
-        public static final int editBirthday2=0x7f0a000a;
-        public static final int editBreed=0x7f0a001a;
-        public static final int editBreed2=0x7f0a0008;
-        public static final int editName=0x7f0a0016;
-        public static final int editName2=0x7f0a0007;
-        public static final int editNotes=0x7f0a001d;
-        public static final int editNotes2=0x7f0a000f;
-        public static final int editSpecies=0x7f0a0019;
-        public static final int editSpecies2=0x7f0a0009;
+        public static final int editBirthday=0x7f0a002a;
+        public static final int editBirthday2=0x7f0a001d;
+        public static final int editBreed=0x7f0a002d;
+        public static final int editBreed2=0x7f0a001b;
+        public static final int editName=0x7f0a0029;
+        public static final int editName2=0x7f0a001a;
+        public static final int editNotes=0x7f0a0030;
+        public static final int editNotes2=0x7f0a0022;
+        public static final int editSpecies=0x7f0a002c;
+        public static final int editSpecies2=0x7f0a001c;
         public static final int frame_container=0x7f0a0001;
-        public static final int icon=0x7f0a0003;
-        public static final int imageButton1=0x7f0a0012;
-        public static final int list=0x7f0a0010;
+        public static final int icon=0x7f0a0016;
+        public static final int imageButton1=0x7f0a0025;
+        public static final int list=0x7f0a0023;
         public static final int list_slidermenu=0x7f0a0002;
-        public static final int pet_name=0x7f0a0020;
-        public static final int pic=0x7f0a001e;
-        public static final int profile_pic=0x7f0a001f;
-        public static final int spinner1=0x7f0a0015;
-        public static final int spinner2=0x7f0a000d;
-        public static final int textView1=0x7f0a0013;
-        public static final int title=0x7f0a0004;
-        public static final int txtLabel=0x7f0a0006;
-        public static final int update=0x7f0a000c;
-        public static final int updatePic=0x7f0a000e;
+        public static final int pet_name=0x7f0a0034;
+        public static final int pic=0x7f0a0031;
+        public static final int profile_pic=0x7f0a0033;
+        public static final int spinner1=0x7f0a0028;
+        public static final int spinner2=0x7f0a0020;
+        public static final int textView1=0x7f0a0026;
+        public static final int title=0x7f0a0017;
+        public static final int txtLabel=0x7f0a0019;
+        public static final int update=0x7f0a001f;
+        public static final int updatePic=0x7f0a0021;
+        public static final int view_all_tasks=0x7f0a0032;
+        public static final int view_all_tasks_item_add_task=0x7f0a003a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int drawer_list_item=0x7f030001;
-        public static final int fragment_careshare=0x7f030002;
-        public static final int fragment_edit_pet=0x7f030003;
-        public static final int fragment_friend_list=0x7f030004;
-        public static final int fragment_journal=0x7f030005;
-        public static final int fragment_my_pets=0x7f030006;
-        public static final int fragment_new_pet=0x7f030007;
-        public static final int fragment_pet_add=0x7f030008;
-        public static final int fragment_pet_view=0x7f030009;
-        public static final int fragment_setting=0x7f03000a;
-        public static final int fragment_to_do=0x7f03000b;
-        public static final int fragment_whats_hot=0x7f03000c;
-        public static final int pet_item=0x7f03000d;
+        public static final int activity_modify_task=0x7f030001;
+        public static final int activity_view_all_pets_listview_all_pets_layout=0x7f030002;
+        public static final int activity_view_task_detail=0x7f030003;
+        public static final int drawer_list_item=0x7f030004;
+        public static final int fragment_careshare=0x7f030005;
+        public static final int fragment_edit_pet=0x7f030006;
+        public static final int fragment_friend_list=0x7f030007;
+        public static final int fragment_journal=0x7f030008;
+        public static final int fragment_my_pets=0x7f030009;
+        public static final int fragment_new_pet=0x7f03000a;
+        public static final int fragment_pet_add=0x7f03000b;
+        public static final int fragment_pet_view=0x7f03000c;
+        public static final int fragment_setting=0x7f03000d;
+        public static final int fragment_to_do=0x7f03000e;
+        public static final int fragment_whats_hot=0x7f03000f;
+        public static final int pet_item=0x7f030010;
     }
     public static final class menu {
         public static final int main=0x7f090000;
+        public static final int modify_task=0x7f090001;
+        public static final int view_all_tasks=0x7f090002;
+        public static final int view_task_detail=0x7f090003;
     }
     public static final class string {
         public static final int action_settings=0x7f060002;
+        public static final int activity_main_Listview_main_option_Item_show_all_pets_String_title=0x7f060007;
+        public static final int activity_main_Listview_main_option_Item_show_all_tasks_String_title=0x7f060008;
+        public static final int activity_modify_pet_Edittext_pet_title_String_hint=0x7f060013;
+        public static final int activity_modify_pet_Menu_actionbar_Item_cancel_String_title=0x7f060012;
+        public static final int activity_modify_pet_Menu_actionbar_Item_save_String_title=0x7f060011;
+        public static final int activity_modify_pet_String_title=0x7f06000f;
+        public static final int activity_modify_pet_Textview_pet_title_String_title=0x7f060010;
+        public static final int activity_modify_task_Button_clear_collaborator_String_title=0x7f06002a;
+        public static final int activity_modify_task_Button_select_collaborator_String_title=0x7f060029;
+        public static final int activity_modify_task_Dialog_confirm_cancel_Button_negative_String_title=0x7f060027;
+        public static final int activity_modify_task_Dialog_confirm_cancel_Button_positive_String_title=0x7f060026;
+        public static final int activity_modify_task_Dialog_confirm_cancel_TextView_label_String_title=0x7f060028;
+        public static final int activity_modify_task_EditText_note_String_hint=0x7f06001a;
+        public static final int activity_modify_task_EditText_task_title_String_hint=0x7f060017;
+        public static final int activity_modify_task_Menu_actionbar_Item_cancel_String_title=0x7f060025;
+        public static final int activity_modify_task_Menu_actionbar_Item_save_String_title=0x7f060024;
+        public static final int activity_modify_task_Spinner_completion_status_Item_no_String_title=0x7f060023;
+        public static final int activity_modify_task_Spinner_completion_status_Item_yes_String_title=0x7f060022;
+        public static final int activity_modify_task_Spinner_priority_level_Item_high_String_title=0x7f06001c;
+        public static final int activity_modify_task_Spinner_priority_level_Item_low_String_title=0x7f06001e;
+        public static final int activity_modify_task_Spinner_priority_level_Item_medium_String_title=0x7f06001d;
+        public static final int activity_modify_task_String_title=0x7f060015;
+        public static final int activity_modify_task_TextView_collaborators_String_title=0x7f06001f;
+        public static final int activity_modify_task_TextView_completion_status_String_title=0x7f060021;
+        public static final int activity_modify_task_TextView_due_date_String_title=0x7f060018;
+        public static final int activity_modify_task_TextView_note_String_title=0x7f060019;
+        public static final int activity_modify_task_TextView_pet_String_title=0x7f060020;
+        public static final int activity_modify_task_TextView_task_title_String_title=0x7f060016;
+        public static final int activity_modify_task_Textview_priority_level_String_title=0x7f06001b;
+        public static final int activity_setting_Checkbox_notification_String_title=0x7f06002e;
+        public static final int activity_setting_Menu_actionbar_Item_cancel_String_title=0x7f060030;
+        public static final int activity_setting_Menu_actionbar_Item_save_String_title=0x7f06002f;
+        public static final int activity_view_all_pets_Menu_actionbar_Item_add_String_title=0x7f06000a;
+        public static final int activity_view_all_pets_Menu_actionbar_Item_manage_String_title=0x7f06000b;
+        public static final int activity_view_all_pets_String_title=0x7f060009;
+        public static final int activity_view_all_tasks_Menu_actionbar_Item_add_String_title=0x7f06000d;
+        public static final int activity_view_all_tasks_Menu_actionbar_Item_manage_String_title=0x7f06000e;
+        public static final int activity_view_all_tasks_String_title=0x7f06000c;
+        public static final int activity_view_task_detail_Menu_actionbar_Item_add_String_title=0x7f06002d;
+        public static final int activity_view_task_detail_Menu_actionbar_Item_delete_String_title=0x7f06002c;
+        public static final int activity_view_task_detail_Menu_actionbar_Item_edit_String_title=0x7f06002b;
+        public static final int activity_view_task_detail_String_title=0x7f060014;
         public static final int app_name=0x7f060000;
         /**  Content Description 
          */

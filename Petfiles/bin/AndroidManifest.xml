@@ -23,6 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.petfiles.ViewTaskDetailActivity"
+            android:label="@string/activity_view_task_detail_String_title" >
+        </activity>
+        <activity
+            android:name="com.example.petfiles.ModifyTaskActivity"
+            android:label="@string/activity_modify_task_String_title" >
+        </activity>
     </application>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
