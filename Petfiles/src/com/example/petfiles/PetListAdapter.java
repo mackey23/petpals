@@ -2,6 +2,8 @@ package com.example.petfiles;
 
 import java.util.List;
 
+import com.example.petfiles.model.PetItem;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.BitmapFactory;

@@ -3,6 +3,9 @@ package com.example.petfiles;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.petfiles.model.Pet;
+import com.example.petfiles.model.PetItem;
+
 import android.app.Activity;
 import android.content.ContentUris;
 import android.content.res.TypedArray;

@@ -3,6 +3,7 @@ package com.example.petfiles;
 import java.util.List;
 
 import com.example.petfiles.DatabaseHandler;
+import com.example.petfiles.model.Pet;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.example.petfiles;
+package com.example.petfiles.model;
 
 public class PetItem {
 	

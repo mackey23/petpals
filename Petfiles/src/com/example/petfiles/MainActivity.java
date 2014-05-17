@@ -223,7 +223,7 @@ public class MainActivity extends FragmentActivity
 			fragment = new SettingFragment();
 			break;
 		case 5:
-			fragment = new WhatsHotFragment();
+			fragment = new FriendListFragment();
 			break;
 
 		default:

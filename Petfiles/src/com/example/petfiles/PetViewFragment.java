@@ -1,5 +1,7 @@
 package com.example.petfiles;
 
+import com.example.petfiles.model.Pet;
+
 import android.app.Activity;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
