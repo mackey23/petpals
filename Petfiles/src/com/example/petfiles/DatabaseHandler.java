@@ -107,7 +107,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	
 	// Close connection to database, should be called at the end when everything is finished
 	public void close(){
-		this.close();
+		SQLiteDatabase db = this.getReadableDatabase();
+	    if (db != null && db.isOpen())
+	    	db.close();
 	}
 	
 	/**
