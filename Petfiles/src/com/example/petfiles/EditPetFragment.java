@@ -33,6 +33,9 @@ public class EditPetFragment  extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
     	
+        if (savedInstanceState != null) {
+            currentPosition = savedInstanceState.getInt(ARG_POSITION);
+        }
     	
     	View rootView = inflater.inflate(R.layout.fragment_edit_pet, container, false);
     	updateImage(rootView);
@@ -178,4 +181,12 @@ public class EditPetFragment  extends Fragment{
 			}
 		});
 	}
+	
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Save the current article selection in case we need to recreate the fragment
+        outState.putInt(ARG_POSITION, currentPosition);
+    }
 }

@@ -183,6 +183,7 @@ public class MainActivity extends FragmentActivity
 		// Handle action bar actions click
 		switch (item.getItemId()) {
 		case R.id.action_settings:
+			setting();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -312,6 +313,19 @@ public class MainActivity extends FragmentActivity
 	
 	public void addPet(View view){
        	Fragment newFragment = new PetAddFragment();
+    	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+    	// Replace whatever is in the fragment_container view with this fragment,
+    	// and add the transaction to the back stack
+    	transaction.replace(R.id.frame_container, newFragment);
+    	transaction.addToBackStack(null);
+
+    	// Commit the transaction
+    	transaction.commit();
+	}
+	
+	public void setting(){
+       	Fragment newFragment = new SettingFragment();
     	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
     	// Replace whatever is in the fragment_container view with this fragment,
