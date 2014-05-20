@@ -8,7 +8,9 @@ import com.example.petfiles.model.Pet;
 import com.example.petfiles.model.PetItem;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentUris;
+import android.content.DialogInterface;
 import android.content.res.TypedArray;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
@@ -17,10 +19,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 public class MyPetsFragment extends Fragment {
@@ -98,8 +105,87 @@ public class MyPetsFragment extends Fragment {
 	        PetListAdapter adapter = new PetListAdapter(getActivity(), petItems);
 	        mylistview.setAdapter(adapter);
 	        mylistview.setOnItemClickListener(new petListClickListener());
+	        mylistview.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+	            public boolean onItemLongClick(AdapterView<?> arg0, View arg1, final int pos, long id) {
+	            	ImageButton delete = (ImageButton) getView().findViewById(pos+1000);
+	            	delete.setVisibility(View.VISIBLE);
+	            	delete.setOnClickListener(new OnClickListener(){
+
+						@Override
+						public void onClick(View arg0) {
+							AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+							 
+							// set title
+							alertDialogBuilder.setTitle("Delete Pet");
+							 
+							// set dialog message
+							alertDialogBuilder
+							.setMessage("Do you wish to delete this pet?")
+							.setCancelable(false)
+							.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,int id) {
+									DatabaseHandler db = new DatabaseHandler(getActivity());
+									Pet pet = db.getPet(pos+1);
+									db.deletePet(pet);
+							        List<Pet> pets = db.getAllPets();   
+							        db.deleteAllPets();
+									 
+							        for (Pet p : pets) {
+							        	db.addPet(p);
+							        }
+							        
+							        db.close();
+							        
+							    	Fragment newFragment = new MyPetsFragment();
+							    	FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+							    	// Replace whatever is in the fragment_container view with this fragment,
+							    	// and add the transaction to the back stack
+							    	transaction.replace(R.id.frame_container, newFragment);
+
+							    	// Commit the transaction
+							    	transaction.commit();
+								}
+							})
+							.setNegativeButton("No",new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,int id) {
+								// if this button is clicked, just close
+								// the dialog box and do nothing
+									dialog.cancel();
+								}
+							});
+							 
+							// create alert dialog
+							AlertDialog alertDialog = alertDialogBuilder.create();
+				 
+							// show it
+							alertDialog.show();
+						}
+	            		
+	            	});
+	            	getView().findViewById(pos+100).setVisibility(View.VISIBLE);
+	            	hide(pos);
+	                return true;
+	            }
+	            
+	        });
         }
 		
+	}
+	
+	public void hide(final int pos){
+		final View listen = getView().findViewById(pos+100);
+    	listen.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+            	ImageButton delete = (ImageButton) mylistview.findViewById(pos+1000);
+            	delete.setVisibility(View.GONE);
+            	listen.setVisibility(View.GONE);
+			}
+    		
+    	});
 	}
 	
 	private class petListClickListener implements ListView.OnItemClickListener{

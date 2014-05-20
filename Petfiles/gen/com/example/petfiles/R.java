@@ -258,18 +258,18 @@ containing a value of this type.
     public static final class id {
         public static final int RelativeLayout1=0x7f05002d;
         public static final int Space1=0x7f050031;
-        public static final int action_settings=0x7f05003f;
+        public static final int action_settings=0x7f050041;
         public static final int activity_modify_task_Datepicker_due_date=0x7f050009;
         public static final int activity_modify_task_EditText_note=0x7f05000a;
         public static final int activity_modify_task_Edittext_task_title=0x7f050008;
-        public static final int activity_modify_task_Menu_actionbar_Item_cancel=0x7f050041;
-        public static final int activity_modify_task_Menu_actionbar_Item_save=0x7f050040;
+        public static final int activity_modify_task_Menu_actionbar_Item_cancel=0x7f050043;
+        public static final int activity_modify_task_Menu_actionbar_Item_save=0x7f050042;
         public static final int activity_modify_task_Spinner_completion_status=0x7f05000d;
         public static final int activity_modify_task_Spinner_pet=0x7f05000c;
         public static final int activity_modify_task_Spinner_priority_level=0x7f05000b;
         public static final int activity_view_all_pets_listview_all_pets_layout_textview_pet_title=0x7f05000e;
-        public static final int activity_view_task_detail_Menu_actionbar_Item_delete=0x7f050044;
-        public static final int activity_view_task_detail_Menu_actionbar_Item_edit=0x7f050043;
+        public static final int activity_view_task_detail_Menu_actionbar_Item_delete=0x7f050046;
+        public static final int activity_view_task_detail_Menu_actionbar_Item_edit=0x7f050045;
         public static final int activity_view_task_detail_TextView_due_date_content=0x7f050012;
         public static final int activity_view_task_detail_TextView_due_date_label=0x7f050011;
         public static final int activity_view_task_detail_TextView_note_content=0x7f050014;
@@ -292,6 +292,7 @@ containing a value of this type.
         public static final int child_fragment=0x7f05002a;
         public static final int confirm=0x7f050035;
         public static final int counter=0x7f05001d;
+        public static final int delete=0x7f05003f;
         public static final int drawer_layout=0x7f050005;
         public static final int editBirthday=0x7f050030;
         public static final int editBirthday2=0x7f050022;
@@ -309,6 +310,7 @@ containing a value of this type.
         public static final int imageButton1=0x7f05002b;
         public static final int list=0x7f050029;
         public static final int list_slidermenu=0x7f050007;
+        public static final int listen=0x7f050040;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int pet_name=0x7f05003c;
@@ -324,7 +326,7 @@ containing a value of this type.
         public static final int update=0x7f050024;
         public static final int updatePic=0x7f050026;
         public static final int view_all_tasks=0x7f05003a;
-        public static final int view_all_tasks_item_add_task=0x7f050042;
+        public static final int view_all_tasks_item_add_task=0x7f050044;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;

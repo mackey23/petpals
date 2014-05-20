@@ -235,10 +235,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				PET_ID + " = '" + petId + "'", null, null, null, null);
 	}
 	
-	public void deleteAll(){
+	public void deleteAllPets(){
 		SQLiteDatabase db = this.getWritableDatabase();
 	    db.delete(TABLE_PETS,null,null);
-	    db.delete(TABLE_TASK, null, null);
 	    db.close();
 	}
 	
