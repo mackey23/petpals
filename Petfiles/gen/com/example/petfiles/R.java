@@ -193,14 +193,15 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f040006;
         public static final int common_signin_btn_light_text_focused=0x7f040007;
         public static final int common_signin_btn_light_text_pressed=0x7f040005;
-        public static final int common_signin_btn_text_dark=0x7f040010;
-        public static final int common_signin_btn_text_light=0x7f040011;
+        public static final int common_signin_btn_text_dark=0x7f040011;
+        public static final int common_signin_btn_text_light=0x7f040012;
         public static final int counter_text_bg=0x7f04000e;
         public static final int counter_text_color=0x7f04000f;
         public static final int list_background=0x7f04000b;
         public static final int list_background_pressed=0x7f04000c;
         public static final int list_divider=0x7f04000d;
         public static final int list_item_title=0x7f04000a;
+        public static final int white=0x7f040010;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -256,8 +257,8 @@ containing a value of this type.
         public static final int list_selector=0x7f020027;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f05002d;
-        public static final int Space1=0x7f050031;
+        public static final int RelativeLayout1=0x7f05001f;
+        public static final int Space1=0x7f050023;
         public static final int action_settings=0x7f050041;
         public static final int activity_modify_task_Datepicker_due_date=0x7f050009;
         public static final int activity_modify_task_EditText_note=0x7f05000a;
@@ -283,32 +284,32 @@ containing a value of this type.
         public static final int activity_view_task_detail_TextView_task_title_content=0x7f050010;
         public static final int activity_view_task_detail_TextView_task_title_label=0x7f05000f;
         public static final int back=0x7f050034;
-        public static final int back2=0x7f050023;
+        public static final int back2=0x7f050027;
         public static final int birthday=0x7f05003e;
         public static final int breed=0x7f05003d;
         public static final int btn_revoke_access=0x7f050038;
         public static final int btn_sign_in=0x7f05001e;
         public static final int btn_sign_out=0x7f050039;
-        public static final int child_fragment=0x7f05002a;
+        public static final int child_fragment=0x7f05002c;
         public static final int confirm=0x7f050035;
         public static final int counter=0x7f05001d;
         public static final int delete=0x7f05003f;
         public static final int drawer_layout=0x7f050005;
-        public static final int editBirthday=0x7f050030;
+        public static final int editBirthday=0x7f050031;
         public static final int editBirthday2=0x7f050022;
         public static final int editBreed=0x7f050033;
-        public static final int editBreed2=0x7f050020;
-        public static final int editName=0x7f05002f;
-        public static final int editName2=0x7f05001f;
+        public static final int editBreed2=0x7f050026;
+        public static final int editName=0x7f050030;
+        public static final int editName2=0x7f050021;
         public static final int editNotes=0x7f050036;
-        public static final int editNotes2=0x7f050027;
+        public static final int editNotes2=0x7f050029;
         public static final int editSpecies=0x7f050032;
-        public static final int editSpecies2=0x7f050021;
+        public static final int editSpecies2=0x7f050025;
         public static final int frame_container=0x7f050006;
         public static final int hybrid=0x7f050004;
         public static final int icon=0x7f05001b;
-        public static final int imageButton1=0x7f05002b;
-        public static final int list=0x7f050029;
+        public static final int imageButton1=0x7f05002d;
+        public static final int list=0x7f05002b;
         public static final int list_slidermenu=0x7f050007;
         public static final int listen=0x7f050040;
         public static final int none=0x7f050000;
@@ -317,14 +318,14 @@ containing a value of this type.
         public static final int pic=0x7f050037;
         public static final int profile_pic=0x7f05003b;
         public static final int satellite=0x7f050002;
-        public static final int spinner1=0x7f05002e;
-        public static final int spinner2=0x7f050025;
+        public static final int spinner1=0x7f05002f;
+        public static final int spinner2=0x7f050020;
         public static final int terrain=0x7f050003;
-        public static final int textView1=0x7f05002c;
+        public static final int textView1=0x7f05002e;
         public static final int title=0x7f05001c;
-        public static final int txtLabel=0x7f050028;
-        public static final int update=0x7f050024;
-        public static final int updatePic=0x7f050026;
+        public static final int txtLabel=0x7f05002a;
+        public static final int update=0x7f050028;
+        public static final int updatePic=0x7f050024;
         public static final int view_all_tasks=0x7f05003a;
         public static final int view_all_tasks_item_add_task=0x7f050044;
     }

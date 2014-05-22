@@ -77,10 +77,11 @@ public class EditPetFragment  extends Fragment{
 		ImageButton button = (ImageButton) now.findViewById(R.id.updatePic);
 		if (selectedImagePath != null) {
 			button.setImageBitmap(BitmapFactory.decodeFile(selectedImagePath));
-		} else if (pet.getImage() == null){
-			button.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
-		} else {
+		} else if (pet.getImage() != null){
 			button.setImageBitmap(BitmapFactory.decodeFile(pet.getImage()));
+			selectedImagePath = pet.getImage();
+		} else {
+			button.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
 		}
 		db.close();
     }

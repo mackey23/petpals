@@ -1,36 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:orientation="horizontal" >
 
-    <EditText
-        android:id="@+id/editName2"
+    <Spinner
+        android:id="@+id/spinner2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editName2"
-        android:layout_marginTop="18dp"
-        android:ems="10" />
+        android:layout_alignRight="@+id/editBirthday2"
+        android:layout_below="@+id/editBirthday2"
+        android:layout_column="0"
+        android:layout_gravity="fill_horizontal" />
 
-    <EditText
-        android:id="@+id/editBreed2"
+    <Space
+        android:id="@+id/Space1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editSpecies2"
-        android:layout_marginTop="23dp"
-        android:ems="10" >
+        android:layout_column="1"
+        android:layout_gravity="fill_vertical"
+        android:layout_row="6" />
 
-        <requestFocus />
-    </EditText>
+    <ImageButton
+        android:id="@+id/updatePic"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@+id/editSpecies2"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:background="@color/white"
+        android:src="@android:drawable/ic_menu_camera" />
 
     <EditText
         android:id="@+id/editBirthday2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editSpecies2"
+        android:ems="10"
+        android:hint="Birthday"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/editName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/editBreed2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editName2"
+        android:ems="10"
+        android:hint="Breed" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editSpecies2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/editBreed2"
-        android:layout_marginTop="19dp"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="Species" />
 
     <Button
         android:id="@+id/back2"
@@ -38,8 +82,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="84dp"
-        android:layout_marginLeft="51dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="36dp"
         android:onClick="back"
         android:text="Cancel" />
 
@@ -47,44 +91,21 @@
         android:id="@+id/update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/back2"
         android:layout_alignBottom="@+id/back2"
-        android:layout_marginLeft="56dp"
-        android:layout_toRightOf="@+id/back2"
+        android:layout_alignRight="@+id/updatePic"
+        android:layout_marginRight="16dp"
         android:text="Confirm" />
-
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editBirthday2" />
-
-    <EditText
-        android:id="@+id/editSpecies2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editName2"
-        android:ems="10" />
-
-    <ImageButton
-        android:id="@+id/updatePic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editSpecies2"
-        android:layout_toRightOf="@+id/update"
-        android:src="@android:drawable/ic_menu_camera"
-        android:scaleType="fitCenter" 
-        android:adjustViewBounds="true" /> 
 
     <EditText
         android:id="@+id/editNotes2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/spinner2"
         android:ems="10"
+        android:hint="Notes"
         android:inputType="textMultiLine" />
 
 </RelativeLayout>

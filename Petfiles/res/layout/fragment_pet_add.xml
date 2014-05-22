@@ -26,15 +26,16 @@
 
     <ImageButton
         android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_alignBottom="@+id/editSpecies"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
+        android:adjustViewBounds="true"
         android:onClick="getImage"
-        android:src="@android:drawable/ic_menu_camera" 
-        android:scaleType="fitCenter" 
-        android:adjustViewBounds="true" />
+        android:scaleType="fitCenter"
+        android:background="@color/white"
+        android:src="@android:drawable/ic_menu_camera" />
 
     <EditText
         android:id="@+id/editBirthday"
@@ -100,12 +101,12 @@
     <EditText
         android:id="@+id/editNotes"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:inputType="textMultiLine" 
-        android:hint="Notes"/>
+        android:hint="Notes"
+        android:inputType="textMultiLine" />
 
 </RelativeLayout>

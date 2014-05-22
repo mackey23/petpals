@@ -23,6 +23,7 @@
         <activity
             android:name="com.example.petfiles.MainActivity"
             android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan"
             android:parentActivityName="com.example.petfiles.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
