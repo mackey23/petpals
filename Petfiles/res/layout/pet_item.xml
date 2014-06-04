@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="2dp" >
+    android:padding="10dp"
+    android:background="@color/background" >
 
     <ImageView
         android:id="@+id/profile_pic"
@@ -10,7 +11,8 @@
         android:layout_height="70dp"
         android:contentDescription="desc"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+        android:paddingRight="10dp" 
+        android:background="@color/white"/>
 
     <TextView
         android:id="@+id/pet_name"
@@ -19,9 +21,11 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/profile_pic"
-        android:paddingBottom="10dp"
         android:text="txt"
-        android:textSize="20sp" />
+        android:textSize="20sp" 
+        android:textColor="@color/white"
+        android:paddingLeft="3dp"
+        android:background="@color/light_blue"/>
 
     <TextView
         android:id="@+id/breed"
@@ -31,7 +35,10 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/birthday"
         android:text="txt"
-        android:textSize="16sp" />
+        android:textSize="16sp" 
+        android:textColor="@color/white"
+        android:paddingLeft="3dp"
+        android:background="@color/light_blue"/>
 
     <TextView
         android:id="@+id/birthday"
@@ -41,7 +48,10 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/pet_name"
         android:text="txt"
-        android:textSize="16sp" />
+        android:textSize="16sp" 
+        android:textColor="@color/white"
+        android:paddingLeft="3dp"
+        android:background="@color/light_blue"/>
 
     <ImageButton
         android:id="@+id/delete"
@@ -50,7 +60,9 @@
         android:layout_above="@+id/breed"
         android:layout_alignRight="@+id/pet_name"
 		android:visibility="gone"
-        android:src="@android:drawable/ic_delete" />
+        android:src="@android:drawable/ic_delete" 
+        android:background="@color/white"
+        android:layout_margin="10dp"/>
 
     <View
         android:id="@+id/listen"

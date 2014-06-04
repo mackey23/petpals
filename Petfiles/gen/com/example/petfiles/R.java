@@ -181,6 +181,7 @@ containing a value of this type.
         public static final int zOrderOnTop=0x7f010010;
     }
     public static final class color {
+        public static final int background=0x7f040011;
         public static final int common_action_bar_splitter=0x7f040009;
         /**  Sign-in Button Colors 
          */
@@ -193,10 +194,12 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f040006;
         public static final int common_signin_btn_light_text_focused=0x7f040007;
         public static final int common_signin_btn_light_text_pressed=0x7f040005;
-        public static final int common_signin_btn_text_dark=0x7f040011;
-        public static final int common_signin_btn_text_light=0x7f040012;
+        public static final int common_signin_btn_text_dark=0x7f040014;
+        public static final int common_signin_btn_text_light=0x7f040015;
         public static final int counter_text_bg=0x7f04000e;
         public static final int counter_text_color=0x7f04000f;
+        public static final int dark_blue=0x7f040013;
+        public static final int light_blue=0x7f040012;
         public static final int list_background=0x7f04000b;
         public static final int list_background_pressed=0x7f04000c;
         public static final int list_divider=0x7f04000d;
@@ -259,18 +262,18 @@ containing a value of this type.
     public static final class id {
         public static final int RelativeLayout1=0x7f05001f;
         public static final int Space1=0x7f050023;
-        public static final int action_settings=0x7f050041;
+        public static final int action_settings=0x7f050045;
         public static final int activity_modify_task_Datepicker_due_date=0x7f050009;
         public static final int activity_modify_task_EditText_note=0x7f05000a;
         public static final int activity_modify_task_Edittext_task_title=0x7f050008;
-        public static final int activity_modify_task_Menu_actionbar_Item_cancel=0x7f050043;
-        public static final int activity_modify_task_Menu_actionbar_Item_save=0x7f050042;
+        public static final int activity_modify_task_Menu_actionbar_Item_cancel=0x7f050047;
+        public static final int activity_modify_task_Menu_actionbar_Item_save=0x7f050046;
         public static final int activity_modify_task_Spinner_completion_status=0x7f05000d;
         public static final int activity_modify_task_Spinner_pet=0x7f05000c;
         public static final int activity_modify_task_Spinner_priority_level=0x7f05000b;
         public static final int activity_view_all_pets_listview_all_pets_layout_textview_pet_title=0x7f05000e;
-        public static final int activity_view_task_detail_Menu_actionbar_Item_delete=0x7f050046;
-        public static final int activity_view_task_detail_Menu_actionbar_Item_edit=0x7f050045;
+        public static final int activity_view_task_detail_Menu_actionbar_Item_delete=0x7f05004a;
+        public static final int activity_view_task_detail_Menu_actionbar_Item_edit=0x7f050049;
         public static final int activity_view_task_detail_TextView_due_date_content=0x7f050012;
         public static final int activity_view_task_detail_TextView_due_date_label=0x7f050011;
         public static final int activity_view_task_detail_TextView_note_content=0x7f050014;
@@ -285,15 +288,15 @@ containing a value of this type.
         public static final int activity_view_task_detail_TextView_task_title_label=0x7f05000f;
         public static final int back=0x7f050034;
         public static final int back2=0x7f050027;
-        public static final int birthday=0x7f05003e;
-        public static final int breed=0x7f05003d;
-        public static final int btn_revoke_access=0x7f050038;
+        public static final int birthday=0x7f05003b;
+        public static final int breed=0x7f050039;
+        public static final int btn_revoke_access=0x7f05003e;
         public static final int btn_sign_in=0x7f05001e;
-        public static final int btn_sign_out=0x7f050039;
+        public static final int btn_sign_out=0x7f05003f;
         public static final int child_fragment=0x7f05002c;
         public static final int confirm=0x7f050035;
         public static final int counter=0x7f05001d;
-        public static final int delete=0x7f05003f;
+        public static final int delete=0x7f050043;
         public static final int drawer_layout=0x7f050005;
         public static final int editBirthday=0x7f050031;
         public static final int editBirthday2=0x7f050022;
@@ -306,18 +309,22 @@ containing a value of this type.
         public static final int editSpecies=0x7f050032;
         public static final int editSpecies2=0x7f050025;
         public static final int frame_container=0x7f050006;
+        public static final int gender=0x7f05003c;
         public static final int hybrid=0x7f050004;
         public static final int icon=0x7f05001b;
         public static final int imageButton1=0x7f05002d;
         public static final int list=0x7f05002b;
         public static final int list_slidermenu=0x7f050007;
-        public static final int listen=0x7f050040;
+        public static final int listen=0x7f050044;
+        public static final int name=0x7f050038;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
-        public static final int pet_name=0x7f05003c;
+        public static final int notes=0x7f05003d;
+        public static final int pet_name=0x7f050042;
         public static final int pic=0x7f050037;
-        public static final int profile_pic=0x7f05003b;
+        public static final int profile_pic=0x7f050041;
         public static final int satellite=0x7f050002;
+        public static final int species=0x7f05003a;
         public static final int spinner1=0x7f05002f;
         public static final int spinner2=0x7f050020;
         public static final int terrain=0x7f050003;
@@ -326,8 +333,8 @@ containing a value of this type.
         public static final int txtLabel=0x7f05002a;
         public static final int update=0x7f050028;
         public static final int updatePic=0x7f050024;
-        public static final int view_all_tasks=0x7f05003a;
-        public static final int view_all_tasks_item_add_task=0x7f050044;
+        public static final int view_all_tasks=0x7f050040;
+        public static final int view_all_tasks_item_add_task=0x7f050048;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;

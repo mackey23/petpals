@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:columnCount="2"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:background="@color/background" >
 
     <Spinner
         android:id="@+id/spinner2"
@@ -78,24 +79,28 @@
 
     <Button
         android:id="@+id/back2"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="50dp"
         android:layout_marginLeft="36dp"
         android:onClick="back"
-        android:text="Cancel" />
+        android:text="Cancel" 
+        android:background="@color/dark_blue"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/update"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/back2"
         android:layout_alignBottom="@+id/back2"
         android:layout_alignRight="@+id/updatePic"
         android:layout_marginRight="16dp"
-        android:text="Confirm" />
+        android:text="Confirm"
+        android:background="@color/dark_blue" 
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/editNotes2"

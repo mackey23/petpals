@@ -2,12 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/background" >
 
     <ListView
         android:id="@+id/list"
         android:layout_width="wrap_content"
-        android:layout_height="383dp" >
+        android:layout_height="396dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
     </ListView>
     
     <FrameLayout 
@@ -17,9 +23,12 @@
 
         <ImageButton
             android:id="@+id/imageButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/dark_blue"
             android:onClick="addPet"
             android:src="@android:drawable/ic_menu_add" />
 

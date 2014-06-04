@@ -41,10 +41,18 @@ public class PetViewFragment extends Fragment{
 		DatabaseHandler db = new DatabaseHandler(now);
 		// NEED TO UPDATE NUMBER ACCORDING TO WHICH PET IS CLICKED
 		Pet pet = db.getPet(position);
-		String info = " Name: " + pet.getName() + "\n Species: " + pet.getSpecies() 
-				+ "\n Breed: " + pet.getBreed() + "\n Birthday: " + pet.getBirthday()
-				+ "\n Gender: " + pet.getGender() +  "\n Notes: " + pet.getNotes();
-		((TextView) now.findViewById(R.id.textView1)).setText(info);
+		String name = "Name: " + pet.getName();
+		String species = "Species: " + pet.getSpecies();
+		String breed = "Breed: " + pet.getBreed();
+		String birth = "Birthday: " + pet.getBirthday();
+		String gender = "Gender: " + pet.getGender();
+		String notes = "Notes: " + pet.getNotes();
+		((TextView) now.findViewById(R.id.name)).setText(name);
+		((TextView) now.findViewById(R.id.species)).setText(species);
+		((TextView) now.findViewById(R.id.breed)).setText(breed);
+		((TextView) now.findViewById(R.id.birthday)).setText(birth);
+		((TextView) now.findViewById(R.id.gender)).setText(gender);
+		((TextView) now.findViewById(R.id.notes)).setText(notes);
 		ImageView image = (ImageView) now.findViewById(R.id.pic);
 		if (pet.getImage() == null) {
 			image.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
