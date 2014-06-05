@@ -212,19 +212,19 @@ public class MainActivity extends FragmentActivity
 			fragment = new MyPetsFragment();
 			break;
 		case 1:
-			fragment = new JournalFragment();
-			break;
-		case 2:
 			fragment = new ToDoFragment();
 			break;
-		case 3:
+		case 2:
 			fragment = new CareShareFragment();
 			break;
+		case 3:
+			fragment = new FriendListFragment();
+			break;
 		case 4:
-			fragment = new SettingFragment();
+			fragment = new JournalFragment();
 			break;
 		case 5:
-			fragment = new FriendListFragment();
+			fragment = new SettingFragment();
 			break;
 
 		default:

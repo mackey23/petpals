@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editSpecies"
+        android:layout_below="@+id/editBreed"
         android:ems="10"
         android:hint="Birthday"
         android:inputType="date" />
@@ -55,18 +55,19 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:ems="10"
-        android:hint="Name" />
-
+        android:hint="Name" >
+     	<requestFocus />
+     </EditText>
+    
     <EditText
         android:id="@+id/editBreed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editName"
+        android:layout_below="@+id/editSpecies"
         android:ems="10"
         android:hint="Breed" >
 
-        <requestFocus />
     </EditText>
 
     <EditText
@@ -74,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editBreed"
+        android:layout_below="@+id/editName"
         android:ems="10"
         android:hint="Species" />
 

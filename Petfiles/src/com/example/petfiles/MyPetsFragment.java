@@ -34,7 +34,7 @@ public class MyPetsFragment extends Fragment {
 	
 	private ArrayList<String> names = new ArrayList<String>();;
 	private ArrayList<String> images = new ArrayList<String>();
-	private ArrayList<String> breeds = new ArrayList<String>();
+	private ArrayList<String> specieses = new ArrayList<String>();
 	private ArrayList<String> birthdays = new ArrayList<String>();
 	
 	private ListView mylistview;
@@ -85,11 +85,11 @@ public class MyPetsFragment extends Fragment {
    	 	if (names.size() == 0) {
 	        for (Pet p : pets) {
 	        	String name = p.getName();
-	        	String breed = p.getBreed();
+	        	String species = p.getSpecies();
 	        	String birthday = p.getBirthday();
 	        	String image = p.getImage();
 	        	names.add(name);
-	        	breeds.add(breed);
+	        	specieses.add(species);
 	        	birthdays.add(birthday);
 	        	images.add(image);
 	        }
@@ -97,7 +97,7 @@ public class MyPetsFragment extends Fragment {
         
         if (petItems.size() == 0){	        
 	        for(int i=0; i<names.size(); i++){
-	        	PetItem item = new PetItem(names.get(i), images.get(i), breeds.get(i), birthdays.get(i));
+	        	PetItem item = new PetItem(names.get(i), images.get(i), specieses.get(i), birthdays.get(i));
 	        	petItems.add(item);
 	        }
 	        

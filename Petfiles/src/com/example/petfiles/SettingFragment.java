@@ -56,7 +56,7 @@ public class SettingFragment extends Fragment implements ConnectionCallbacks, On
         mGoogleApiClient = new GoogleApiClient.Builder(now)
         .addConnectionCallbacks(this)
         .addOnConnectionFailedListener(this)
-        .addApi(Plus.API, null)
+        .addApi(Plus.API)
         .addScope(Plus.SCOPE_PLUS_LOGIN)
         .build();
         
@@ -142,13 +142,11 @@ public class SettingFragment extends Fragment implements ConnectionCallbacks, On
 	@Override
 	public void onConnected(Bundle connectionHint) {
 		mSignInClicked = false;
-		Toast.makeText(getActivity(), "User is connected!", Toast.LENGTH_LONG).show();
 
 		// Update the UI after signin
 		update(true);
 	}
 	
-
 	@Override
 	public void onConnectionSuspended(int cause) {
 		mGoogleApiClient.connect();
@@ -164,6 +162,7 @@ public class SettingFragment extends Fragment implements ConnectionCallbacks, On
 			mGoogleApiClient.disconnect();
 			mGoogleApiClient.connect();
 			update(false);
+			Toast.makeText(getActivity(), "Sign-out successful!", Toast.LENGTH_LONG).show();
 		}
 	}
 

@@ -80,8 +80,8 @@ public class PetAddFragment extends Fragment {
 				if(name.length() == 0){
 					editName.setError("Name is required");
 				} 
-				if(breed.length() == 0){
-					editBreed.setError("Breed is required");
+				if(species.length() == 0){
+					editSpecies.setError("Species is required");
 				} 
 				if(birthday.length() == 0){
 					editBirth.setError("Birthday is required");

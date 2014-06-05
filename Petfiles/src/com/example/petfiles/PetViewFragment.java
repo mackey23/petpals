@@ -25,6 +25,7 @@ public class PetViewFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 		
+		getActivity().setTitle("Pet Profile");
 		
         if (savedInstanceState != null) {
             currentPosition = savedInstanceState.getInt(ARG_POSITION);

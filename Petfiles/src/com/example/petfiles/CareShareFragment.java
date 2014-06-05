@@ -67,7 +67,7 @@ public class CareShareFragment extends Fragment implements ConnectionCallbacks, 
         mGoogleApiClient = new GoogleApiClient.Builder(now)
         .addConnectionCallbacks(this)
         .addOnConnectionFailedListener(this)
-        .addApi(Plus.API, null)
+        .addApi(Plus.API)
         .addScope(Plus.SCOPE_PLUS_LOGIN)
         .build();
         
@@ -141,8 +141,13 @@ public class CareShareFragment extends Fragment implements ConnectionCallbacks, 
 	@Override
 	public void onConnected(Bundle connectionHint) {
 		mSignInClicked = false;
-		Toast.makeText(getActivity(), "User is connected!", Toast.LENGTH_LONG).show();
-
+		//Toast.makeText(getActivity(), "Sign-in successful!", Toast.LENGTH_LONG).show();
+		Person currentPerson = Plus.PeopleApi
+				.getCurrentPerson(mGoogleApiClient);
+		String personName = currentPerson.getDisplayName();
+		String greet = "Hello, " + personName;
+		Toast.makeText(getActivity(), greet, Toast.LENGTH_LONG).show();
+		
 		// Get user's information
 		getProfileInformation();
 
@@ -237,13 +242,13 @@ public class CareShareFragment extends Fragment implements ConnectionCallbacks, 
 	 * */
 	private void updateFrag(boolean isSignedIn) {
 		if (isSignedIn) {
-	      	Fragment newFragment = new MainCareFragment();
+	      	Fragment newFragment = new CareShareMainFragment();
 	    	FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
 	    	// Replace whatever is in the fragment_container view with this fragment,
 	    	// and add the transaction to the back stack
 	    	transaction.replace(R.id.frame_container, newFragment);
-	    	transaction.addToBackStack(null);
+	    	//transaction.addToBackStack(null);
 
 	    	// Commit the transaction
 	    	transaction.commit();
